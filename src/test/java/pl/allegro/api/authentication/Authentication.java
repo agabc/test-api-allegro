@@ -37,7 +37,6 @@ public class Authentication {
     private String generateAccessToken() {
         AuthTokenResponse tokenResponse = RestAssured
                 .given()
-                .log().everything()
                 .baseUri(ConfigurationManager.getConfiguration().authUri())
                 .contentType(String.valueOf(ContentType.APPLICATION_FORM_URLENCODED))
                 .headers(Map.of("Authorization", getAuthorizationHeader()))
